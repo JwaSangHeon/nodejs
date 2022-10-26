@@ -7,18 +7,7 @@
     <title>NodeJS</title>
   </head>
   <body>
-    <button id="download">download</button>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      const download = document.querySelector("#download");
-      download.addEventListener("click", () => {
-        axios
-          .get("https://www.zerocho.com/api/get")
-          .then((result) => {
-            console.log(result);
-          })
-          .catch((err) => console.log(err));
-      });
-    </script>
+    <h1>Node.js 웹 서버</h1>
+    <p>해보자</p>
   </body>
 </html>
