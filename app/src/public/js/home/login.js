@@ -20,7 +20,16 @@ const onClickLoginBtn = () => {
     body: JSON.stringify(req),
   })
     .then((res) => res.json())
-    .then(console.log);
+    .then((res) => {
+      if (res.success) {
+        location.href = "/";
+      } else {
+        alert(res.message);
+      }
+    })
+    .catch((err) => {
+      console.error("로그인 중 에러 발생");
+    });
 };
 
 // 이벤트
