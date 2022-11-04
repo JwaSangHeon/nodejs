@@ -3,10 +3,11 @@
 // 변수
 const id = document.querySelector("#id");
 const password = document.querySelector("#password");
-const loginBtn = document.querySelector("#loginBtn");
+const loginForm = document.querySelector("#loginForm");
 
 // 함수
-const onClickLoginBtn = () => {
+const onClickLoginBtn = (e) => {
+  e.preventDefault();
   const req = {
     id: id.value,
     password: password.value,
@@ -33,4 +34,4 @@ const onClickLoginBtn = () => {
 };
 
 // 이벤트
-loginBtn.addEventListener("click", onClickLoginBtn);
+loginForm.addEventListener("submit", onClickLoginBtn);

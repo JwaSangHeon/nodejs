@@ -2,8 +2,6 @@
 
 const UserStorage = require("./UserStorage");
 
-UserStorage;
-
 class User {
   constructor(body) {
     this.body = body;
