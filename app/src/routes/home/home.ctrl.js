@@ -10,6 +10,9 @@ const output = {
   login: (req, res) => {
     res.render("home/login");
   },
+  signup: (req, res) => {
+    res.render("home/signup");
+  },
 };
 
 const process = {
