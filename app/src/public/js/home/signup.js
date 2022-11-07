@@ -2,18 +2,22 @@
 
 // 변수
 const id = document.querySelector("#id");
+const name = document.querySelector("#name");
 const password = document.querySelector("#password");
-const loginForm = document.querySelector("#loginForm");
+const confirmPassword = document.querySelector("#confirm-password");
+const signupForm = document.querySelector("#signupForm");
 
 // 함수
-const onSubmitLoginBtn = (e) => {
+const onSubmitSignupBtn = (e) => {
   e.preventDefault();
   const req = {
     id: id.value,
+    name: name.value,
     password: password.value,
+    confirmPassword: password.value,
   };
 
-  fetch("/login", {
+  fetch("/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,9 +33,9 @@ const onSubmitLoginBtn = (e) => {
       }
     })
     .catch((err) => {
-      console.error("로그인 중 에러 발생");
+      console.error("회원가입 중 에러 발생");
     });
 };
 
 // 이벤트
-loginForm.addEventListener("submit", onSubmitLoginBtn);
+signupForm.addEventListener("submit", onSubmitSignupBtn);
