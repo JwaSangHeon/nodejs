@@ -8,15 +8,21 @@ class User {
   }
 
   login() {
-    const { id, password } = UserStorage.getUserInfo(this.body.id);
+    const client = this.body;
+    const { id, password } = UserStorage.getUserInfo(client.id);
 
     if (id) {
-      if (id === this.body.id && password === this.body.password) {
+      if (id === client.id && password === client.password) {
         return { success: true };
       }
       return { success: false, message: "비밀번호가 틀렸습니다." };
     }
     return { success: false, message: "해당 계정은 없습니다." };
+  }
+
+  signup() {
+    const client = this.body;
+    return UserStorage.save(client);
   }
 }
 

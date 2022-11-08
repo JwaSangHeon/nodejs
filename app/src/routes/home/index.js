@@ -12,5 +12,6 @@ router.get("/login", ctrl.output.login);
 router.get("/signup", ctrl.output.signup);
 
 router.post("/login", ctrl.process.login);
+router.post("/signup", ctrl.process.signup);
 
 module.exports = router;
