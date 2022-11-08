@@ -21,9 +21,15 @@ class User {
     return { success: false, message: "해당 계정은 없습니다." };
   }
 
-  signup() {
+  async signup() {
     const client = this.body;
-    return UserStorage.save(client);
+    try {
+      const response = await UserStorage.save(client);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: err };
+    }
   }
 }
 
